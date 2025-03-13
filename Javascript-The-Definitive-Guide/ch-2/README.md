@@ -1,11 +1,15 @@
-<center><h1>Capítulo 1: Introducción a JavaScript</h1></center>
+<center><h1>Capítulo 2: Estructura Léxica</h1></center>
 
 ## Introducción
-El capítulo 1 titulado "Introducción a JavaScript" 
+El capítulo 2 titulado "Estructura Léxica" 
 
 
 ## Desarrollo
-<h3 style="color:lightblue">1. Introducción a JavaScript</h3>
+
+<h3 style="color:#f5e1ab">2. </h3>
+
+
+<h3 style="color:lightblue">2.1 Introducción a JavaScript</h3>
 
 
 

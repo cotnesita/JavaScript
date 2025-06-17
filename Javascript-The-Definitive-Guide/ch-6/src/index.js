@@ -17,22 +17,22 @@ let persona = {
     }
 };
 
-console.log(persona.saludar());              
-console.log(persona.nombreCompleto);         
+console.log(persona.saludar());               // Hola, soy Ana
+console.log(persona.nombreCompleto);          // Ana Martínez
 persona.nombreCompleto = "Casem Cotne";
-console.log(persona.nombre);                
-console.log(persona.apellido);               
+console.log(persona.nombre);                  // Casem
+console.log(persona.apellido);                // Cotne
 
 // Creamos un objeto que hereda de persona
 let estudiante = Object.create(persona);
 estudiante.curso = "Inglés";
 
-console.log(estudiante.nombreCompleto);      
-console.log(estudiante.curso);               
+console.log(estudiante.nombreCompleto);       // Casem Cotne
+console.log(estudiante.curso);                // Inglés
 
 let infoExtra = { universidad: "UMIN", graduado: false };
 Object.assign(estudiante, infoExtra);
-console.log(estudiante.universidad);         
+console.log(estudiante.universidad);          // UMIN
 
 for (let prop in estudiante) {
     if (estudiante.hasOwnProperty(prop)) {

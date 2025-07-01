@@ -1,39 +1,9 @@
+<center><h1>Capítulo 7: Arrays</h1></center>
+
+## Introducción
+El capítulo 7 titulado "Arrays" explora los arrays en JavaScript, un tipo de dato fundamental. 
 
 
-
-# Capítulo 7: Arrays
-
-Este capítulo trata sobre los arrays en JavaScript, un tipo de dato fundamental. 
-
----
-
-## ¿Qué es un array?
-Un array es una colección ordenada de elementos. Cada elemento tiene una posición numérica llamada "índice", que empieza desde 0. Los arrays en JavaScript pueden contener datos de diferentes tipos y crecer o reducirse dinámicamente.
-
-Ejemplo:
-```js
-let mixto = [1, "texto", true, [1, 2], {clave: "valor"}];
-```
-
----
-
-## 7.1 Crear Arrays
-### Array literal
-Forma más simple:
-```js
-let numeros = [1, 2, 3];
-```
-
-### Spread operator
-Permite copiar o combinar arrays:
-```js
-let copia = [...numeros];
-```
-
-### Constructor `Array()`
-```js
-let a = new Array(3); // Array con longitud 3 pero sin valores definidos
-```
 
 ### `Array.of()`
 Permite crear arrays con un solo número como valor:
@@ -210,6 +180,77 @@ Los arrays en JavaScript son estructuras versátiles y poderosas. Este capítulo
 
 
 
+## Desarrollo
+<h3 style="color:lightblue">1. ¿Qué es un array?</h3>
 
+Un array es una colección ordenada de elementos. Cada elemento tiene una posición numérica llamada "índice", que empieza desde 0. Los arrays en JavaScript pueden contener datos de diferentes tipos y crecer o reducirse dinámicamente.
+
+Ejemplo:
+
+```js
+let mixto = [1, "texto", true, [1, 2], {clave: "valor"}];
+```
+
+<h3 style="color:lightpink">2. Crear Arrays</h3>
+
+<h4 style="color:lightpink">2.1 Array literal</h4>
+
+Forma más simple:
+```js
+let numeros = [1, 2, 3];
+```
+
+<h4 style="color:lightpink">2.2 Spread operator</h4>
+
+Permite copiar o combinar arrays:
+```js
+let copia = [...numeros];
+```
+
+<h4 style="color:#f5e1ab">2.3 Constructor `Array()`</h4>
+
+```js
+let a = new Array(3); // Array con longitud 3 pero sin valores definidos
+```
+
+<h3 style="color:#b0f5ab">3. Consultar y cambiar propiedades</h3>
+
+
+
+<h4 style="color:#ffbe69">5. Ejemplo práctico</h4>
+
+
+
+<h3 style="color:#ffbe69">6. Herencia</h3>
+
+
+
+<h3 style="color:#ffbe69">7. Errores comunes</h3>
+
+
+
+<h3 style="color:#ffbe69">8. Eliminar propiedades</h3>
+
+
+
+
+<h3 style="color:#ffbe69">9. Verificar si existe una propiedad</h3>
+
+
+
+<h3 style="color:#ffbe69">10. Recorrer propiedades</h3>
+
+
+
+
+<h3 style="color:#ffbe69">11. Copiar propiedades</h3>
+
+
+
+
+<h3 style="color:#ffbe69">12. Guardar y cargar objetos</h3>
+
+
+Este capítulo es esencial para dominar JavaScript, ya que todo —funciones, arreglos, fechas— son objetos o están basados en ellos.
 
 

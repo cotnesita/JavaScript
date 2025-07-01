@@ -3,183 +3,6 @@
 ## Introducción
 El capítulo 7 titulado "Arrays" explora los arrays en JavaScript, un tipo de dato fundamental. 
 
-
-
-### `Array.of()`
-Permite crear arrays con un solo número como valor:
-```js
-let unico = Array.of(10); // [10]
-```
-
-### `Array.from()`
-Convierte objetos similares a arrays en arrays reales:
-```js
-let copia = Array.from("hola"); // ['h','o','l','a']
-```
-
----
-
-## 7.2 Leer y escribir elementos
-Se accede a los valores usando corchetes:
-```js
-let letras = ["a", "b"];
-let primera = letras[0];
-letras[1] = "c";
-```
-
----
-
-## 7.3 Arrays dispersos
-Son arrays donde algunos índices no tienen valor definido:
-```js
-let disperso = [];
-disperso[100] = "fin";
-```
-
----
-
-## 7.4 Propiedad `length`
-Define la longitud del array. Se ajusta automáticamente al agregar o quitar elementos:
-```js
-let a = [1,2,3];
-a.length = 1; // a ahora es [1]
-```
-
----
-
-## 7.5 Agregar y eliminar elementos
-### Agregar
-```js
-let a = [];
-a.push("uno"); // al final
-a.unshift("cero"); // al inicio
-```
-
-### Eliminar
-```js
-a.pop();    // elimina el último
-a.shift();  // elimina el primero
-delete a[0]; // elimina sin ajustar length
-```
-
----
-
-## 7.6 Recorrer un array
-### `for/of`
-```js
-for (let valor of a) console.log(valor);
-```
-
-### `forEach()`
-```js
-a.forEach(v => console.log(v));
-```
-
-### `for` clásico
-```js
-for (let i = 0; i < a.length; i++) console.log(a[i]);
-```
-
----
-
-## 7.7 Arrays multidimensionales
-Son arrays dentro de arrays:
-```js
-let matriz = [[1,2],[3,4]];
-console.log(matriz[1][0]); // 3
-```
-
----
-
-## 7.8 Métodos de Array
-### Iteradores
-- `forEach()`: recorre y aplica una función.
-- `map()`: transforma cada elemento.
-- `filter()`: filtra según una condición.
-- `find()`, `findIndex()`: busca el primer que cumpla una condición.
-- `every()`, `some()`: verifican condiciones.
-- `reduce()`, `reduceRight()`: reducen a un solo valor.
-
-### Ejemplos:
-```js
-let nums = [1,2,3,4];
-nums.map(x => x * 2); // [2,4,6,8]
-nums.filter(x => x > 2); // [3,4]
-nums.reduce((a,b) => a + b); // 10
-```
-
-### flat() y flatMap()
-```js
-[1, [2, [3]]].flat(2); // [1,2,3]
-["hola mundo"].flatMap(p => p.split(" ")); // ["hola", "mundo"]
-```
-
-### concat()
-Une arrays:
-```js
-[1,2].concat([3,4]); // [1,2,3,4]
-```
-
-### push/pop y shift/unshift
-Permiten usar el array como pila o cola.
-
-### slice() y splice()
-```js
-[1,2,3].slice(1); // [2,3] (no modifica original)
-[1,2,3].splice(1,1); // [2] (modifica el original)
-```
-
-### fill() y copyWithin()
-```js
-new Array(3).fill(0); // [0,0,0]
-[1,2,3,4].copyWithin(1, 2); // [1,3,4,4]
-```
-
-### Búsqueda y ordenamiento
-```js
-[1,2,3].includes(2); // true
-[1,2,3].indexOf(3); // 2
-[3,1,2].sort(); // ordena como strings
-[3,1,2].sort((a,b) => a-b); // ordena como números
-```
-
-### Conversión a string
-```js
-[1,2,3].join("-"); // "1-2-3"
-[1,2,3].toString(); // "1,2,3"
-```
-
-### Métodos estáticos
-```js
-Array.isArray([]); // true
-```
-
----
-
-## 7.9 Objetos tipo array
-Son objetos que tienen `.length` y propiedades numéricas:
-```js
-let parecido = {0: "a", 1: "b", length: 2};
-Array.from(parecido); // ["a", "b"]
-```
-
----
-
-## 7.10 Cadenas como arrays
-Las cadenas pueden recorrerse como si fueran arrays:
-```js
-let texto = "hola";
-texto[0]; // 'h'
-Array.prototype.join.call("hola", "-"); // "h-o-l-a"
-```
-
----
-
-## 7.11 Conclusión
-Los arrays en JavaScript son estructuras versátiles y poderosas. Este capítulo explora desde su creación básica hasta técnicas avanzadas como `reduce`, `flatMap` o el uso de arrays como pilas y colas. Familiarizarse con los métodos de Array es esencial para escribir código eficiente y moderno.
-
-
-
 ## Desarrollo
 <h3 style="color:lightblue">1. ¿Qué es un array?</h3>
 
@@ -213,44 +36,191 @@ let copia = [...numeros];
 let a = new Array(3); // Array con longitud 3 pero sin valores definidos
 ```
 
-<h3 style="color:#b0f5ab">3. Consultar y cambiar propiedades</h3>
+<h4 style="color:#b0f5ab">2.4 `Array.of()`</h4>
 
+Permite crear arrays con un solo número como valor:
 
+```js
+let unico = Array.of(10); // [10]
+```
 
-<h4 style="color:#ffbe69">5. Ejemplo práctico</h4>
+<h4 style="color:#ffbe69">2.5 `Array.from()`</h4>
 
+Convierte objetos similares a arrays en arrays reales:
 
+```js
+let copia = Array.from("hola"); // ['h','o','l','a']
+```
 
-<h3 style="color:#ffbe69">6. Herencia</h3>
+<h3 style="color:#ffbe69">3. Leer y escribir elementos</h3>
 
+Se accede a los valores usando corchetes:
 
+```js
+let letras = ["a", "b"];
+let primera = letras[0];
+letras[1] = "c";
+```
 
-<h3 style="color:#ffbe69">7. Errores comunes</h3>
+<h3 style="color:#ffbe69">4. Arrays dispersos</h3>
 
+Son arrays donde algunos índices no tienen valor definido:
 
+```js
+let disperso = [];
+disperso[100] = "fin";
+```
 
-<h3 style="color:#ffbe69">8. Eliminar propiedades</h3>
+<h3 style="color:#ffbe69">5. Propiedad `length`</h3>
 
+Define la longitud del array. Se ajusta automáticamente al agregar o quitar elementos:
 
+```js
+let a = [1,2,3];
+a.length = 1; // a ahora es [1]
+```
 
+<h3 style="color:#ffbe69">6. Agregar y eliminar elementos</h3>
 
-<h3 style="color:#ffbe69">9. Verificar si existe una propiedad</h3>
+<h4 style="color:#ffbe69">6.1 Agregar</h4>
 
+```js
+let a = [];
+a.push("uno"); // al final
+a.unshift("cero"); // al inicio
+```
 
+<h4 style="color:#ffbe69">6.2 Eliminar</h4>
 
-<h3 style="color:#ffbe69">10. Recorrer propiedades</h3>
+```js
+a.pop();    // elimina el último
+a.shift();  // elimina el primero
+delete a[0]; // elimina sin ajustar length
+```
 
+<h3 style="color:#ffbe69">7. Recorrer un array</h3>
 
+<h4 style="color:#ffbe69">7.1 `for/of`</h4>
 
+```js
+for (let valor of a) console.log(valor);
+```
 
-<h3 style="color:#ffbe69">11. Copiar propiedades</h3>
+<h4 style="color:#ffbe69">7.2 `forEach()`</h4>
 
+```js
+a.forEach(v => console.log(v));
+```
 
+<h4 style="color:#ffbe69">7.3 `for` clásico</h4>
 
+```js
+for (let i = 0; i < a.length; i++) console.log(a[i]);
+```
 
-<h3 style="color:#ffbe69">12. Guardar y cargar objetos</h3>
+<h4 style="color:#ffbe69">7.4 Arrays multidimensionales</h4>
 
+Son arrays dentro de arrays:
 
-Este capítulo es esencial para dominar JavaScript, ya que todo —funciones, arreglos, fechas— son objetos o están basados en ellos.
+```js
+let matriz = [[1,2],[3,4]];
+console.log(matriz[1][0]); // 3
+```
 
+<h3 style="color:#ffbe69">8. Métodos de Array</h3>
 
+<h4 style="color:#ffbe69">8.1 Iteradores</h4>
+
+- `forEach()`: recorre y aplica una función.
+- `map()`: transforma cada elemento.
+- `filter()`: filtra según una condición.
+- `find()`, `findIndex()`: busca el primer que cumpla una condición.
+- `every()`, `some()`: verifican condiciones.
+- `reduce()`, `reduceRight()`: reducen a un solo valor.
+
+<h4 style="color:#ffbe69">8.2 Ejemplos</h4>
+
+```js
+let nums = [1,2,3,4];
+nums.map(x => x * 2); // [2,4,6,8]
+nums.filter(x => x > 2); // [3,4]
+nums.reduce((a,b) => a + b); // 10
+```
+
+<h4 style="color:#ffbe69">8.3 flat() y flatMap()</h4>
+
+```js
+[1, [2, [3]]].flat(2); // [1,2,3]
+["hola mundo"].flatMap(p => p.split(" ")); // ["hola", "mundo"]
+```
+
+<h4 style="color:#ffbe69">8.4 concat()</h4>
+
+Une arrays:
+
+```js
+[1,2].concat([3,4]); // [1,2,3,4]
+```
+
+<h4 style="color:#ffbe69">8.5 push/pop y shift/unshift</h4>
+
+Permiten usar el array como pila o cola.
+
+<h4 style="color:#ffbe69">8.6 slice() y splice()</h4>
+
+```js
+[1,2,3].slice(1); // [2,3] (no modifica original)
+[1,2,3].splice(1,1); // [2] (modifica el original)
+```
+
+<h4 style="color:#ffbe69">8.7 fill() y copyWithin()</h4>
+
+```js
+new Array(3).fill(0); // [0,0,0]
+[1,2,3,4].copyWithin(1, 2); // [1,3,4,4]
+```
+
+<h4 style="color:#ffbe69">8.7 Búsqueda y ordenamiento</h4>
+
+```js
+[1,2,3].includes(2); // true
+[1,2,3].indexOf(3); // 2
+[3,1,2].sort(); // ordena como strings
+[3,1,2].sort((a,b) => a-b); // ordena como números
+```
+
+<h4 style="color:#ffbe69">8.8 Conversión a string</h4>
+
+```js
+[1,2,3].join("-"); // "1-2-3"
+[1,2,3].toString(); // "1,2,3"
+```
+
+<h4 style="color:#ffbe69">8.9 Métodos estáticos</h4>
+
+```js
+Array.isArray([]); // true
+```
+
+<h3 style="color:#ffbe69">9. Objetos tipo array</h3>
+
+Son objetos que tienen `.length` y propiedades numéricas:
+
+```js
+let parecido = {0: "a", 1: "b", length: 2};
+Array.from(parecido); // ["a", "b"]
+```
+
+<h3 style="color:#ffbe69">10. Cadenas como arrays</h3>
+
+Las cadenas pueden recorrerse como si fueran arrays:
+
+```js
+let texto = "hola";
+texto[0]; // 'h'
+Array.prototype.join.call("hola", "-"); // "h-o-l-a"
+```
+
+<h3 style="color:#ffbe69">10. Conclusión</h3>
+
+Los arrays en JavaScript son estructuras versátiles y poderosas. Este capítulo explora desde su creación básica hasta técnicas avanzadas como `reduce`, `flatMap` o el uso de arrays como pilas y colas. Familiarizarse con los métodos de Array es esencial para escribir código eficiente y moderno.
